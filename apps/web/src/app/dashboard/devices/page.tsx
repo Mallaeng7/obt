@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MonitorSmartphone, Power, ShieldAlert, Package } from "lucide-react";
 import { cn } from "@/lib/utils";
 

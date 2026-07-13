@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { Card, CardContent } from '../../../../components/ui/Card';
-import { Button } from '../../../../components/ui/Button';
-import { useServerStore } from '../../../../stores/serverStore';
-import { fetchAPI } from '../../../../lib/api';
+import { Card, CardContent } from '../../../components/ui/Card';
+import { Button } from '../../../components/ui/Button';
+import { useServerStore } from '../../../stores/serverStore';
+import { fetchAPI } from '../../../lib/api';
 
 const Editor = dynamic(() => import('@monaco-editor/react').then(mod => mod.Editor), { ssr: false });
 
