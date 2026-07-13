@@ -1,0 +1,6 @@
+{
+    "c4.explosive": [
+        { "itemName": "Explosives", "amount": 10 },
+        { "itemName": "Cloth", "amount": 2 }
+    ]
+}

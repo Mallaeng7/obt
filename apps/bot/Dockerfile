@@ -24,7 +24,7 @@ RUN apk add --no-cache openssl
 RUN cd apps/bot && pnpm run prisma:generate
 
 # Build the bot using turborepo or tsc
-RUN pnpm --filter @obt/bot build
+RUN pnpm --filter "@obt/bot..." build
 
 EXPOSE 3001
 

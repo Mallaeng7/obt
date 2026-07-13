@@ -1,0 +1,5 @@
+[
+    { "id": -151836814, "name": "c4.explosive", "displayName": "Timed Explosive Charge", "craftTime": 30 },
+    { "id": 1443313900, "name": "ammo.rocket.basic", "displayName": "Rocket", "craftTime": 10 },
+    { "id": 1545779598, "name": "ammo.rifle.explosive", "displayName": "Explosive 5.56 Rifle Ammo", "craftTime": 3 }
+]

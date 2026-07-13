@@ -14,7 +14,7 @@ RUN pnpm install --frozen-lockfile
 COPY apps/web ./apps/web
 COPY packages ./packages
 
-RUN pnpm --filter @obt/web build
+RUN pnpm --filter "@obt/web..." build
 
 FROM node:20-alpine AS runner
 WORKDIR /app

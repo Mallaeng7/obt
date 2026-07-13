@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "target": "es2020",
+    "lib": ["es2020"]
   },
   "include": ["src"]
 }

@@ -1,0 +1,10 @@
+{
+    "Armored Door": [
+        { "weapon": "Timed Explosive Charge", "amount": 2, "sulfur": 4400, "timeSec": 20 },
+        { "weapon": "Rocket", "amount": 4, "sulfur": 5600, "timeSec": 15 }
+    ],
+    "Sheet Metal Door": [
+        { "weapon": "Timed Explosive Charge", "amount": 1, "sulfur": 2200, "timeSec": 10 },
+        { "weapon": "Rocket", "amount": 2, "sulfur": 2800, "timeSec": 8 }
+    ]
+}

@@ -2,7 +2,9 @@
   "extends": "@obt/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "target": "es2020",
+    "lib": ["es2020"]
   },
   "include": ["src"]
 }
