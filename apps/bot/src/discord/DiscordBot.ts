@@ -56,11 +56,14 @@ export class DiscordBot {
     for (const file of commandFiles) {
       if (file === 'index.ts' || file === 'index.js') continue;
       const filePath = path.join(commandsPath, file);
-      const { default: command } = await import(filePath);
-      
-      if (command && 'data' in command && 'execute' in command) {
-        this.commands.set(command.data.name, command);
-        slashCommands.push(command.data.toJSON());
+      try {
+        const { default: command } = await import(filePath);
+        if (command && 'data' in command && 'execute' in command) {
+          this.commands.set(command.data.name, command);
+          slashCommands.push(command.data.toJSON());
+        }
+      } catch (err) {
+        console.error(`[Discord] Failed to load command from ${file}:`, err);
       }
     }
 
