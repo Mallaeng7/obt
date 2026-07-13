@@ -20,8 +20,9 @@ COPY packages ./packages
 # Build Next.js app
 RUN pnpm --filter "@obt/web" build
 
-# Verify standalone was created and show its contents for debugging
-RUN ls -la /app/apps/web/.next/standalone/
+# Debug: show what standalone contains
+RUN echo "=== standalone root ===" && ls -la /app/apps/web/.next/standalone/ && \
+    echo "=== standalone node_modules/next ===" && ls /app/apps/web/.next/standalone/node_modules/next 2>/dev/null || echo "next not found in standalone/node_modules"
 
 # ── Runner Stage ──────────────────────────────────────
 FROM node:20-alpine AS runner
@@ -31,11 +32,12 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# Copy standalone output (server.js is at the root of standalone dir)
+# outputFileTracingRoot=monorepo root means standalone output mirrors the monorepo structure
+# server.js is at standalone root, but node_modules trace from monorepo root
 COPY --from=builder /app/apps/web/.next/standalone ./
-COPY --from=builder /app/apps/web/.next/static ./.next/static
-COPY --from=builder /app/apps/web/public ./public
+COPY --from=builder /app/apps/web/.next/static ./apps/web/.next/static
+COPY --from=builder /app/apps/web/public ./apps/web/public
 
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+CMD ["node", "apps/web/server.js"]
