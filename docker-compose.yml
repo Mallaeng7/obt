@@ -45,12 +45,6 @@ services:
       - DATABASE_URL=postgresql://${POSTGRES_USER:-rustplus_user}:${POSTGRES_PASSWORD:-rustplus_pass}@db:5432/${POSTGRES_DB:-rustplusbot}
     depends_on:
       - bot
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 30s
 
   nginx:
     image: nginx:alpine
@@ -61,8 +55,8 @@ services:
     volumes:
       - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
-      web:
-        condition: service_healthy
+      - web
+      - bot
 
 volumes:
   db_data:
