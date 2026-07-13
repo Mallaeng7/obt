@@ -74,7 +74,7 @@ export class TrackerManager {
         });
         
         let eventStr = recentEvents.length > 0 
-          ? recentEvents.map(e => `- ${e.type} (${Math.floor((Date.now() - e.createdAt.getTime())/60000)}m ago)`).join('\n')
+          ? recentEvents.map((e: any) => `- ${e.type} (${Math.floor((Date.now() - e.createdAt.getTime())/60000)}m ago)`).join('\n')
           : 'No recent events';
         embed.addFields({ name: '🔔 Recent Events', value: eventStr, inline: false });
 

@@ -5,7 +5,7 @@ import { rustPlusManager } from '../../core/RustPlusManager';
 export async function serversRoutes(fastify: FastifyInstance) {
   fastify.get('/', async () => {
     const servers = await prisma.server.findMany();
-    return servers.map(s => ({
+    return servers.map((s: any) => ({
       id: s.id,
       name: s.name,
       isActive: s.isActive,

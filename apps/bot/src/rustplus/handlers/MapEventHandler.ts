@@ -1,4 +1,5 @@
 import { events } from '../../core/EventEmitterHub';
+import { MapEvent } from '@obt/shared-types';
 import { rustPlusManager } from '../../core/RustPlusManager';
 
 export class MapEventHandler {
@@ -53,7 +54,7 @@ export class MapEventHandler {
       }
       
       for (const marker of newMarkers) {
-        let type: string | null = null;
+        let type: MapEvent['type'] | null = null;
         
         // 4 = CH47, 5 = CargoShip, 6 = Crate, 8 = PatrolHelicopter
         if (marker.type === 5) type = 'cargo';

@@ -1,0 +1,1 @@
+{"version":3,"file":"PluginRepository.d.ts","sourceRoot":"","sources":["../../../src/database/repositories/PluginRepository.ts"],"names":[],"mappings":"AAEA,qBAAa,gBAAgB;IACrB,YAAY,CAAC,QAAQ,EAAE,MAAM;;;;;;;;;;;;;IAI7B,MAAM,CAAC,IAAI,EAAE,GAAG;;;;;;;;;;;;;IAIhB,MAAM,CAAC,EAAE,EAAE,MAAM;;;;;;;;;;;;;CAGxB;AAED,eAAO,MAAM,gBAAgB,kBAAyB,CAAC"}

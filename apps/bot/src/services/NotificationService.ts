@@ -32,7 +32,7 @@ export class NotificationService {
       await this.sendDiscordAlert(serverId, `💀 Team Death`, msg, 0x8B0000);
     });
 
-    events.on('fcm:pairing', async (payload) => {
+    events.on('fcm:pairing', async (payload: any) => {
       console.log('[NotificationService] Pairing request received:', payload);
       try {
         const port = parseInt(payload.port, 10);
@@ -43,6 +43,7 @@ export class NotificationService {
             data: {
               ip: payload.ip,
               port,
+              appPort: port,
               name: payload.desc || payload.name,
               steamId: payload.playerId,
               playerToken: payload.playerToken,

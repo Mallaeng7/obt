@@ -1,0 +1,1 @@
+{"version":3,"file":"DeathEmbed.d.ts","sourceRoot":"","sources":["../../../src/discord/embeds/DeathEmbed.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,YAAY,CAAC;AAE1C,qBAAa,UAAW,SAAQ,YAAY;gBAC9B,UAAU,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,EAAE,CAAC,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;CAUnE"}

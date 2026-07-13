@@ -1,0 +1,1 @@
+{"version":3,"file":"TeamTracker.d.ts","sourceRoot":"","sources":["../../../src/discord/trackers/TeamTracker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAA6B,MAAM,YAAY,CAAC;AAI/D,qBAAa,WAAW;IACtB,OAAO,CAAC,MAAM,CAAS;IACvB,OAAO,CAAC,SAAS,CAAS;IAC1B,OAAO,CAAC,SAAS,CAAC,CAAS;gBAEf,MAAM,EAAE,MAAM,EAAE,SAAS,EAAE,MAAM;IAKhC,KAAK;YAKJ,MAAM;CA4BrB"}

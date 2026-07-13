@@ -1,0 +1,1 @@
+{"version":3,"file":"CraftCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/CraftCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAG1D,qBAAa,YAAa,YAAW,OAAO;IAC1C,IAAI,SAAW;IACf,OAAO,WAAS;IAChB,WAAW,SAAuC;IAClD,KAAK,SAAiC;IACtC,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAkBpD"}

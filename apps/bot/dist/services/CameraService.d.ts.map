@@ -1,0 +1,1 @@
+{"version":3,"file":"CameraService.d.ts","sourceRoot":"","sources":["../../src/services/CameraService.ts"],"names":[],"mappings":"AAEA,qBAAa,aAAa;IAClB,cAAc,CAAC,QAAQ,EAAE,MAAM,EAAE,UAAU,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;;;;;;;IAQ/E,UAAU,CAAC,QAAQ,EAAE,MAAM;;;;;;;IAI3B,YAAY,CAAC,QAAQ,EAAE,MAAM,EAAE,UAAU,EAAE,MAAM;;;;;;;CAKxD;AAED,eAAO,MAAM,aAAa,eAAsB,CAAC"}

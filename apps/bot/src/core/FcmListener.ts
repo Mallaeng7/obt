@@ -1,6 +1,6 @@
 import { listen } from 'push-receiver';
 import { events } from './EventEmitterHub';
-import { config } from '../config/env';
+import { env } from '../config/env';
 import { prisma } from '../database/client';
 
 import fs from 'fs';
@@ -15,9 +15,9 @@ export class FcmListener {
     let credentials = dynamicCreds;
 
     if (!credentials) {
-      if (config.fcmCreds) {
+      if (env.FCM_CREDENTIALS) {
         try {
-          credentials = JSON.parse(config.fcmCreds);
+          credentials = JSON.parse(env.FCM_CREDENTIALS);
         } catch (e) {
           console.error('[FcmListener] Invalid FCM_CREDENTIALS format in env.');
         }

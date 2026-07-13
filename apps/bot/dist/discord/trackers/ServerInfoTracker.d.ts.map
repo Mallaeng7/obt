@@ -1,0 +1,1 @@
+{"version":3,"file":"ServerInfoTracker.d.ts","sourceRoot":"","sources":["../../../src/discord/trackers/ServerInfoTracker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAe,MAAM,YAAY,CAAC;AAKjD,qBAAa,iBAAiB;IAC5B,OAAO,CAAC,MAAM,CAAS;IACvB,OAAO,CAAC,SAAS,CAAS;IAC1B,OAAO,CAAC,SAAS,CAAC,CAAS;gBAEf,MAAM,EAAE,MAAM,EAAE,SAAS,EAAE,MAAM;IAKhC,KAAK;YAKJ,MAAM;CAyBrB"}

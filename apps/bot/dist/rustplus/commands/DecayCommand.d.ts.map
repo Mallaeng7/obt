@@ -1,0 +1,1 @@
+{"version":3,"file":"DecayCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/DecayCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAG1D,qBAAa,YAAa,YAAW,OAAO;IAC1C,IAAI,SAAW;IACf,OAAO,UAAM;IACb,WAAW,SAA8E;IACzF,KAAK,SAAkC;IACvC,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAqBpD"}

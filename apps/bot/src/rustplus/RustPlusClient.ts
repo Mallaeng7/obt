@@ -1,7 +1,7 @@
 import RustPlus from '@liamcottle/rustplus.js';
 
 export class RustPlusClient {
-  private rustplus: RustPlus;
+  private rustplus: any;
   public serverId: string;
 
   constructor(ip: string, port: number, steamId: string, playerToken: string, serverId: string) {
@@ -62,5 +62,23 @@ export class RustPlusClient {
 
   public async sendTeamMessage(message: string): Promise<any> {
     return await this.sendRequestAsync('sendTeamMessage', { message });
+  }
+
+  public get client(): any {
+    return this.rustplus;
+  }
+
+  public async getMap(): Promise<any> {
+    const res = await this.sendRequestAsync('getMap');
+    return res.map;
+  }
+
+  public async getTime(): Promise<any> {
+    const res = await this.sendRequestAsync('getTime');
+    return res.time;
+  }
+
+  public async promoteToLeader(steamId: string): Promise<any> {
+    return await this.sendRequestAsync('promoteToLeader', { steamId });
   }
 }

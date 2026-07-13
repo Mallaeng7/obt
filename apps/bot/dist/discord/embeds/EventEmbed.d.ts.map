@@ -1,0 +1,1 @@
+{"version":3,"file":"EventEmbed.d.ts","sourceRoot":"","sources":["../../../src/discord/embeds/EventEmbed.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,YAAY,CAAC;AAE1C,qBAAa,UAAW,SAAQ,YAAY;gBAC9B,IAAI,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM,EAAE,GAAG,EAAE,MAAM;CAYpE"}

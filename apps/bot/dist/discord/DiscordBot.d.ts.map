@@ -1,0 +1,1 @@
+{"version":3,"file":"DiscordBot.d.ts","sourceRoot":"","sources":["../../src/discord/DiscordBot.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAA+B,UAAU,EAAgB,MAAM,YAAY,CAAC;AAK3F,qBAAa,UAAU;IACd,MAAM,EAAE,MAAM,CAAC;IACf,QAAQ,EAAE,UAAU,CAAC,MAAM,EAAE,GAAG,CAAC,CAAoB;;IAgB5D,OAAO,CAAC,cAAc;IAwBT,YAAY;IAkCZ,KAAK;CAQnB;AAED,eAAO,MAAM,UAAU,YAAmB,CAAC"}

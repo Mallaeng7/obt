@@ -1,0 +1,1 @@
+{"version":3,"file":"DeathCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/DeathCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAI1D,qBAAa,YAAa,YAAW,OAAO;IAC1C,IAAI,SAAW;IACf,OAAO,WAA0B;IACjC,WAAW,SAA4C;IACvD,KAAK,SAAmB;IACxB,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAmDpD"}

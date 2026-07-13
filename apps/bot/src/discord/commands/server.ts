@@ -22,7 +22,7 @@ export default {
       return interaction.followUp('No servers are paired with this Discord server.');
     }
 
-    const embeds = await Promise.all(servers.map(async (dbServer) => {
+    const embeds = await Promise.all(servers.map(async (dbServer: any) => {
       const instance = rustPlusManager.getServer(dbServer.id);
       let status = '🔴 Offline / Not Connected';
       let details = '';

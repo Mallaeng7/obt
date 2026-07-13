@@ -1,0 +1,36 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.registerCommands = registerCommands;
+const CommandRouter_1 = require("./CommandRouter");
+const PopCommand_1 = require("./PopCommand");
+const NightCommand_1 = require("./NightCommand");
+const EventsCommand_1 = require("./EventsCommand");
+const StatusCommand_1 = require("./StatusCommand");
+const OnOffCommand_1 = require("./OnOffCommand");
+const CraftCommand_1 = require("./CraftCommand");
+const RecycleCommand_1 = require("./RecycleCommand");
+const DurabilityCommand_1 = require("./DurabilityCommand");
+const DecayCommand_1 = require("./DecayCommand");
+const VendCommand_1 = require("./VendCommand");
+const WatchForCommand_1 = require("./WatchForCommand");
+const PromoteCommand_1 = require("./PromoteCommand");
+const DeathCommand_1 = require("./DeathCommand");
+const TeamStatsCommand_1 = require("./TeamStatsCommand");
+const TurretCommand_1 = require("./TurretCommand");
+function registerCommands() {
+    CommandRouter_1.commandRouter.register(new PopCommand_1.PopCommand());
+    CommandRouter_1.commandRouter.register(new NightCommand_1.NightCommand());
+    CommandRouter_1.commandRouter.register(new EventsCommand_1.EventsCommand());
+    CommandRouter_1.commandRouter.register(new StatusCommand_1.StatusCommand());
+    CommandRouter_1.commandRouter.register(new OnOffCommand_1.OnOffCommand());
+    CommandRouter_1.commandRouter.register(new CraftCommand_1.CraftCommand());
+    CommandRouter_1.commandRouter.register(new RecycleCommand_1.RecycleCommand());
+    CommandRouter_1.commandRouter.register(new DurabilityCommand_1.DurabilityCommand());
+    CommandRouter_1.commandRouter.register(new DecayCommand_1.DecayCommand());
+    CommandRouter_1.commandRouter.register(new VendCommand_1.VendCommand());
+    CommandRouter_1.commandRouter.register(new WatchForCommand_1.WatchForCommand());
+    CommandRouter_1.commandRouter.register(new PromoteCommand_1.PromoteCommand());
+    CommandRouter_1.commandRouter.register(new DeathCommand_1.DeathCommand());
+    CommandRouter_1.commandRouter.register(new TeamStatsCommand_1.TeamStatsCommand());
+    CommandRouter_1.commandRouter.register(new TurretCommand_1.TurretCommand());
+}

@@ -6,7 +6,7 @@ import {
   VoiceConnection,
   NoSubscriberBehavior
 } from '@discordjs/voice';
-import { EdgeTTS } from 'edge-tts';
+const { EdgeTTS } = require('edge-tts');
 import { Client, VoiceBasedChannel } from 'discord.js';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -14,7 +14,7 @@ import * as path from 'path';
 export class VoiceClient {
   private connections: Map<string, VoiceConnection> = new Map();
   private players: Map<string, ReturnType<typeof createAudioPlayer>> = new Map();
-  private tts: EdgeTTS;
+  private tts: any;
 
   constructor() {
     this.tts = new EdgeTTS({

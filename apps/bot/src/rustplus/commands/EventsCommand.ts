@@ -18,7 +18,7 @@ export class EventsCommand implements Command {
 
     if (events.length === 0) return 'No recent events recorded.';
 
-    const lines = events.map(e => {
+    const lines = events.map((e: any) => {
       const mins = Math.floor((Date.now() - e.createdAt.getTime()) / 60000);
       const icon = this.getIcon(e.type);
       return `${icon} ${e.type}: ${mins} mins ago`;

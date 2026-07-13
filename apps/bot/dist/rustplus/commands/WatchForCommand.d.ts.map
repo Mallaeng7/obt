@@ -1,0 +1,1 @@
+{"version":3,"file":"WatchForCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/WatchForCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAG1D,qBAAa,eAAgB,YAAW,OAAO;IAC7C,IAAI,SAAc;IAClB,OAAO,WAAa;IACpB,WAAW,SAAuE;IAClF,KAAK,SAA2B;IAChC,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAcpD"}

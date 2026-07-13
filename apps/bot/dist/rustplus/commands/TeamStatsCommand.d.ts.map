@@ -1,0 +1,1 @@
+{"version":3,"file":"TeamStatsCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/TeamStatsCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAG1D,qBAAa,gBAAiB,YAAW,OAAO;IAC9C,IAAI,SAAe;IACnB,OAAO,WAAmC;IAC1C,WAAW,SAAsC;IACjD,KAAK,SAAgB;IACrB,QAAQ,SAAM;IAER,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAiCpD"}

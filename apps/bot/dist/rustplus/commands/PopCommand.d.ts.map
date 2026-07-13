@@ -1,0 +1,1 @@
+{"version":3,"file":"PopCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/PopCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAE1D,qBAAa,UAAW,YAAW,OAAO;IACxC,IAAI,SAAS;IACb,OAAO,WAA6B;IACpC,WAAW,SAA+C;IAC1D,KAAK,SAAU;IACf,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAIpD"}

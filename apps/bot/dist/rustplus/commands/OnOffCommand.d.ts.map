@@ -1,0 +1,1 @@
+{"version":3,"file":"OnOffCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/OnOffCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAG1D,qBAAa,YAAa,YAAW,OAAO;IAC1C,IAAI,SAAQ;IACZ,OAAO,WAAqB;IAC5B,WAAW,SAA2C;IACtD,KAAK,SAAuB;IAC5B,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAyBpD"}

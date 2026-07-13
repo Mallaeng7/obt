@@ -1,0 +1,1 @@
+{"version":3,"file":"PromoteCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/PromoteCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAE1D,qBAAa,cAAe,YAAW,OAAO;IAC5C,IAAI,SAAa;IACjB,OAAO,WAAc;IACrB,WAAW,SAA2C;IACtD,KAAK,SAAqB;IAC1B,QAAQ,SAAM;IAER,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAkBpD"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"SocketManager.d.ts","sourceRoot":"","sources":["../../../src/api/websocket/SocketManager.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,WAAW,CAAC;AAGnC,qBAAa,aAAa;IACxB,OAAO,CAAC,EAAE,CAAuB;IAE1B,IAAI,CAAC,EAAE,EAAE,MAAM;IA2Df,KAAK;CAGb;AAED,eAAO,MAAM,aAAa,eAAsB,CAAC"}

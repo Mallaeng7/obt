@@ -25,7 +25,5 @@ export class CraftCommand implements Command {
     const timeStr = totalTime > 60 ? `${Math.floor(totalTime/60)}m ${totalTime%60}s` : `${totalTime}s`;
 
     return `🛠️ Crafting ${amount}x ${item.displayName} takes ${timeStr}.`;
-    // Complex recursive crafting logic requires extensive data not fully available.
-    return `🛠️ '${item.displayName}' requires crafting materials.`;
   }
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"PluginSandbox.d.ts","sourceRoot":"","sources":["../../src/plugins/PluginSandbox.ts"],"names":[],"mappings":"AAKA,qBAAa,aAAa;IACxB,OAAO,CAAC,aAAa,CAAsC;IAE9C,UAAU,CAAC,QAAQ,EAAE,MAAM,EAAE,IAAI,EAAE,MAAM;IA8C/C,YAAY,CAAC,QAAQ,EAAE,MAAM;CAIrC;AAED,eAAO,MAAM,aAAa,eAAsB,CAAC"}

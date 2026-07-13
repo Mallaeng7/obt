@@ -1,0 +1,1 @@
+{"version":3,"file":"DurabilityCommand.d.ts","sourceRoot":"","sources":["../../../src/rustplus/commands/DurabilityCommand.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,iBAAiB,CAAC;AAG1D,qBAAa,iBAAkB,YAAW,OAAO;IAC/C,IAAI,SAAgB;IACpB,OAAO,WAAoB;IAC3B,WAAW,SAAmD;IAC9D,KAAK,SAA0B;IAC/B,QAAQ,SAAK;IAEP,OAAO,CAAC,GAAG,EAAE,cAAc,GAAG,OAAO,CAAC,MAAM,CAAC;CAiBpD"}
