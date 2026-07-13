@@ -1,0 +1,13 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.next/
+**/.next/
+.git/
+.env
+*.log
+docker-compose.yml
+.dockerignore
+wiki.md
+README.md

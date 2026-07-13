@@ -1,0 +1,213 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── 시스템 설정 ───
+model AppConfig {
+  id        String   @id @default("app")
+  steamKey  String?  // 암호화 저장
+  discordToken String? // 암호화 저장
+  discordAppId String?
+  fcmCreds  String?  // 암호화 저장 (JSON)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── 서버 (다중 서버 지원) ───
+model Server {
+  id              String   @id @default(uuid())
+  name            String
+  ip              String
+  port            Int
+  appPort         Int
+  steamId         String
+  playerToken     String   // 암호화 저장
+  seed            Int?
+  mapSize         Int?
+  mapImageUrl     String?
+  wipeDate        DateTime?
+  discordGuildId  String?
+  alertChannelId  String?  // 알림 전송 채널
+  trackerChannelId String? // 트래커 임베드 채널
+  isActive        Boolean  @default(true)
+  pollingInterval Int      @default(30) // 초 단위
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  devices         Device[]
+  teamMembers     TeamMember[]
+  events          ServerEvent[]
+  cameras         Camera[]
+  plugins         ServerPlugin[]
+  vendingItems    VendingItem[]
+  turrets         TurretPosition[]
+  mapNotes        MapNote[]
+  watchItems      WatchItem[]
+
+  @@index([discordGuildId])
+}
+
+// ─── 스마트 기기 ───
+model Device {
+  id          String   @id @default(uuid())
+  entityId    Int
+  name        String
+  type        String   // "switch" | "alarm" | "storage_monitor"
+  groupName   String?
+  isActive    Boolean  @default(false)
+  lastToggled DateTime?
+  serverId    String
+  server      Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([serverId, entityId])
+  @@index([serverId])
+}
+
+// ─── 팀원 ───
+model TeamMember {
+  id          String   @id @default(uuid())
+  steamId     String
+  name        String
+  isOnline    Boolean  @default(false)
+  isAlive     Boolean  @default(true)
+  x           Float?
+  y           Float?
+  deathCount  Int      @default(0)
+  playTime    Int      @default(0)  // 분 단위
+  afkTime     Int      @default(0)  // 분 단위
+  lastMoved   DateTime?
+  serverId    String
+  server      Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  deaths      DeathLocation[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([serverId, steamId])
+  @@index([serverId])
+}
+
+// ─── 사망 위치 ───
+model DeathLocation {
+  id           String     @id @default(uuid())
+  x            Float
+  y            Float
+  killerName   String?
+  weapon       String?
+  distance     Float?
+  teamMemberId String
+  teamMember   TeamMember @relation(fields: [teamMemberId], references: [id], onDelete: Cascade)
+  createdAt    DateTime   @default(now())
+
+  @@index([teamMemberId])
+}
+
+// ─── 서버 이벤트 ───
+model ServerEvent {
+  id        String   @id @default(uuid())
+  type      String   // "heli" | "cargo" | "oil_rig_small" | "oil_rig_large" | "chinook" | "locked_crate" | "deep_sea"
+  x         Float?
+  y         Float?
+  metadata  Json?    // 추가 데이터 (방향, 상태 등)
+  serverId  String
+  server    Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([serverId, type])
+  @@index([createdAt])
+}
+
+// ─── 카메라 ───
+model Camera {
+  id         String  @id @default(uuid())
+  identifier String  // 인게임 카메라 ID
+  name       String?
+  type       String  // "cctv" | "drone" | "turret"
+  serverId   String
+  server     Server  @relation(fields: [serverId], references: [id], onDelete: Cascade)
+
+  @@unique([serverId, identifier])
+}
+
+// ─── 자판기 아이템 ───
+model VendingItem {
+  id          String   @id @default(uuid())
+  itemName    String
+  quantity    Int
+  costItem    String
+  costAmount  Int
+  currencyIsBp Boolean @default(false)
+  x           Float
+  y           Float
+  shopName    String?
+  serverId    String
+  server      Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  discoveredAt DateTime @default(now())
+
+  @@index([serverId, itemName])
+}
+
+// ─── 자판기 감시 ───
+model WatchItem {
+  id          String   @id @default(uuid())
+  itemName    String
+  requestedBy String   // Steam ID
+  serverId    String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@index([serverId, isActive])
+}
+
+// ─── 플러그인 ───
+model ServerPlugin {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  code        String   // JavaScript 코드
+  trigger     String?  // 트리거 명령어
+  isActive    Boolean  @default(true)
+  isBuiltin   Boolean  @default(false)
+  version     String   @default("1.0.0")
+  serverId    String
+  server      Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([serverId, name])
+}
+
+// ─── 터렛 위치 ───
+model TurretPosition {
+  id       String @id @default(uuid())
+  x        Float
+  y        Float
+  floor    Int    @default(1)
+  label    String?
+  serverId String
+  server   Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
+
+  @@index([serverId])
+}
+
+// ─── 맵 노트 ───
+model MapNote {
+  id        String   @id @default(uuid())
+  label     String
+  x         Float
+  y         Float
+  icon      Int      @default(0)
+  color     String   @default("#FF6B35")
+  createdBy String?  // Steam ID
+  serverId  String
+  server    Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([serverId])
+}

@@ -1,0 +1,7 @@
+[
+  { "name": "Armored Door", "hp": 800, "decayTimeHrs": 12 },
+  { "name": "Sheet Metal Door", "hp": 250, "decayTimeHrs": 8 },
+  { "name": "Stone Wall", "hp": 500, "decayTimeHrs": 5 },
+  { "name": "Metal Wall", "hp": 1000, "decayTimeHrs": 8 },
+  { "name": "Armored Wall", "hp": 2000, "decayTimeHrs": 12 }
+]

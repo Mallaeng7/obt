@@ -1,0 +1,15 @@
+{
+  "name": "@obt/rust-data",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts*\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@obt/tsconfig": "workspace:*",
+    "typescript": "^5.4.5"
+  }
+}
