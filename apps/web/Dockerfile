@@ -18,7 +18,10 @@ COPY apps/web ./apps/web
 COPY packages ./packages
 
 # Build Next.js app
-RUN pnpm --filter "@obt/web..." build
+RUN pnpm --filter "@obt/web" build
+
+# Verify standalone was created and show its contents for debugging
+RUN ls -la /app/apps/web/.next/standalone/
 
 # ── Runner Stage ──────────────────────────────────────
 FROM node:20-alpine AS runner
@@ -28,15 +31,9 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# standalone output contains server.js at its root
-# In a monorepo, it is output to apps/web/.next/standalone/
-# Copying it to WORKDIR (/app) puts server.js at /app/server.js
+# Copy standalone output (server.js is at the root of standalone dir)
 COPY --from=builder /app/apps/web/.next/standalone ./
-
-# Static assets must be at /app/.next/static (same level as server.js)
 COPY --from=builder /app/apps/web/.next/static ./.next/static
-
-# Public assets must be at /app/public
 COPY --from=builder /app/apps/web/public ./public
 
 EXPOSE 3000

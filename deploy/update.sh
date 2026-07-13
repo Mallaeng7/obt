@@ -4,18 +4,33 @@
 
 set -e
 
-echo "🔄 [1/4] 최신 코드 가져오기..."
+echo "🔄 [1/5] 최신 코드 가져오기..."
 git pull origin main
 
-echo "🛑 [2/4] 컨테이너 중지..."
+echo "🛑 [2/5] 컨테이너 중지..."
 docker-compose down
 
-echo "🔨 [3/4] 이미지 재빌드 (캐시 없이)..."
-docker-compose build --no-cache bot
+echo "🔨 [3/5] 이미지 재빌드..."
+docker-compose build --no-cache
 
-echo "🚀 [4/4] 컨테이너 재시작..."
+echo "🔍 [4/5] 빌드 확인..."
+docker-compose config --services
+
+echo "🚀 [5/5] 컨테이너 시작..."
 docker-compose up -d
 
 echo ""
-echo "✅ 업데이트 완료! 로그 확인:"
-echo "   docker-compose logs -f bot"
+echo "⏳ 컨테이너 상태 확인 중 (10초 대기)..."
+sleep 10
+docker-compose ps
+
+echo ""
+echo "📋 최근 로그:"
+echo "=== BOT ==="
+docker-compose logs --tail=20 bot
+echo ""
+echo "=== WEB ==="
+docker-compose logs --tail=20 web
+echo ""
+echo "=== NGINX ==="
+docker-compose logs --tail=10 nginx
