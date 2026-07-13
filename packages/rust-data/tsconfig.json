@@ -5,6 +5,7 @@
     "rootDir": "src",
     "resolveJsonModule": true,
     "target": "es2020",
+    "module": "CommonJS",
     "lib": ["es2020"]
   },
   "include": ["src"]
