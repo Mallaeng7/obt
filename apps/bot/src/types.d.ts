@@ -1,3 +1,3 @@
 declare module 'push-receiver';
 declare module '@liamcottle/rustplus.js';
-declare module 'edge-tts';
+declare module 'node-edge-tts';

@@ -16,7 +16,7 @@ const envSchema = z.object({
   BOT_API_PORT: z.string().default('3001'),
   WEB_PORT: z.string().default('3000'),
   TTS_ENABLED: z.string().transform((val) => val === 'true').default('true'),
-  TTS_ENGINE: z.string().default('edge-tts'),
+  TTS_ENGINE: z.string().default('node-edge-tts'),
 });
 
 const parsed = envSchema.safeParse(process.env);

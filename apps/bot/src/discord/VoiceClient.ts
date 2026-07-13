@@ -6,7 +6,7 @@ import {
   VoiceConnection,
   NoSubscriberBehavior
 } from '@discordjs/voice';
-const { EdgeTTS } = require('edge-tts');
+const { EdgeTTS } = require('node-edge-tts');
 import { Client, VoiceBasedChannel } from 'discord.js';
 import * as fs from 'fs';
 import * as path from 'path';

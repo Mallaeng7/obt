@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.voiceClient = exports.VoiceClient = void 0;
 const voice_1 = require("@discordjs/voice");
-const { EdgeTTS } = require('edge-tts');
+const { EdgeTTS } = require('node-edge-tts');
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 class VoiceClient {

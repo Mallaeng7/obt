@@ -50,7 +50,7 @@ const envSchema = zod_1.z.object({
     BOT_API_PORT: zod_1.z.string().default('3001'),
     WEB_PORT: zod_1.z.string().default('3000'),
     TTS_ENABLED: zod_1.z.string().transform((val) => val === 'true').default('true'),
-    TTS_ENGINE: zod_1.z.string().default('edge-tts'),
+    TTS_ENGINE: zod_1.z.string().default('node-edge-tts'),
 });
 const parsed = envSchema.safeParse(process.env);
 if (!parsed.success) {
