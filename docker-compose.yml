@@ -23,9 +23,7 @@ services:
     env_file:
       - .env
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/rustplusbot
-    ports:
-      - "3001:3001"
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-rustplus_user}:${POSTGRES_PASSWORD:-rustplus_pass}@db:5432/${POSTGRES_DB:-rustplusbot}
     depends_on:
       - db
 
@@ -37,8 +35,8 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-rustplus_user}:${POSTGRES_PASSWORD:-rustplus_pass}@db:5432/${POSTGRES_DB:-rustplusbot}
     depends_on:
       - bot
 
