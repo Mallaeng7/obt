@@ -13,6 +13,11 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rustplus_user} -d ${POSTGRES_DB:-rustplusbot}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   bot:
     build:
@@ -25,7 +30,8 @@ services:
     environment:
       - DATABASE_URL=postgresql://${POSTGRES_USER:-rustplus_user}:${POSTGRES_PASSWORD:-rustplus_pass}@db:5432/${POSTGRES_DB:-rustplusbot}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   web:
     build:
