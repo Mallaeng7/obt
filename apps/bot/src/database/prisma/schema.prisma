@@ -159,6 +159,7 @@ model WatchItem {
   itemName    String
   requestedBy String   // Steam ID
   serverId    String
+  server      Server   @relation(fields: [serverId], references: [id], onDelete: Cascade)
   isActive    Boolean  @default(true)
   createdAt   DateTime @default(now())
 
