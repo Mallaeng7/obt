@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@discordjs/voice": "^0.17.0",
+    "@liamcottle/push-receiver": "^0.0.4",
     "@liamcottle/rustplus.js": "^2.5.0",
     "@obt/rust-data": "workspace:*",
     "@obt/shared-types": "workspace:*",
     "@prisma/client": "^5.14.0",
+    "axios": "^1.18.1",
     "discord.js": "^14.15.2",
     "dotenv": "^16.4.5",
     "fastify": "^4.26.2",
@@ -29,6 +31,7 @@
     "pino-pretty": "^11.0.0",
     "push-receiver": "^2.1.1",
     "socket.io": "^4.7.5",
+    "uuid": "^14.0.1",
     "vm2": "^3.9.19",
     "zod": "^3.25.76"
   },
@@ -36,6 +39,7 @@
     "@obt/tsconfig": "workspace:*",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.12.12",
+    "@types/uuid": "^11.0.0",
     "prisma": "^5.14.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
