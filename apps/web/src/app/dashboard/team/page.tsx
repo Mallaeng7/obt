@@ -71,7 +71,7 @@ export default function TeamPage() {
         <div className="glass-panel p-8 rounded-2xl border border-yellow-500/20 bg-yellow-500/5 flex items-center gap-3 text-yellow-400">
           <WifiOff className="w-5 h-5 shrink-0" />
           <span>
-            No server connected. Use the <code className="bg-white/10 px-1 rounded">/pair</code> Discord command to connect your Rust server.
+            No server connected. Click "Pair with Server" in-game to connect your Rust server.
           </span>
         </div>
       ) : members.length === 0 ? (

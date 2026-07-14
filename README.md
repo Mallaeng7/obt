@@ -90,7 +90,7 @@ sudo docker-compose logs -f bot  # 봇 에러 로그 확인
 ## 🕹 자주 사용하는 명령어
 
 ### Discord 봇 명령어 (Slash Commands)
-- `/pair [IP] [포트] [SteamID] [PlayerToken]`: 봇을 내 Rust 서버와 연동합니다.
+- `/credentials add`: 봇을 본인의 Rust 계정과 연결하기 위해 FCM 토큰을 주입하는 명령어입니다. (최초 1회)
 - `/server info`: 연결된 서버들의 인원수 및 상태를 확인합니다.
 - `/events`: 최근 발생한 주요 서버 이벤트를 조회합니다.
 - `/vend [아이템명]`: 전체 자판기에서 특정 아이템을 검색합니다.

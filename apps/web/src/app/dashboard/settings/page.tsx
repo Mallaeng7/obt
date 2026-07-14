@@ -143,7 +143,7 @@ export default function SettingsPage() {
               <div>
                 <p className="font-medium text-foreground">No servers paired</p>
                 <p className="text-sm mt-0.5">
-                  Use the <code className="bg-white/10 px-1 rounded">/pair</code> Discord command or click "Pair with Server" in-game to connect a Rust server.
+                  Use the <code className="bg-white/10 px-1 rounded">/credentials add</code> Discord command first, then click "Pair with Server" in-game to connect a Rust server.
                 </p>
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function SettingsPage() {
           )}
 
           <button className="w-full py-4 border-2 border-dashed border-white/20 rounded-xl text-muted-foreground hover:bg-white/5 hover:text-white transition-colors hover:border-white/40 font-medium">
-            + Pair New Server (use /pair in Discord)
+            + Click "Pair with Server" in-game
           </button>
         </section>
 
