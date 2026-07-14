@@ -7,6 +7,7 @@ import { playersRoutes } from './players';
 import { eventsRoutes } from './events';
 import { vendingRoutes } from './vending';
 import { pluginsRoutes } from './plugins';
+import { dashboardRoutes } from './dashboard';
 
 export async function apiRoutes(fastify: FastifyInstance) {
   fastify.get('/api/health', async () => ({ status: 'ok', time: new Date() }));
@@ -19,4 +20,5 @@ export async function apiRoutes(fastify: FastifyInstance) {
   await fastify.register(eventsRoutes, { prefix: '/api/servers/:id/events' });
   await fastify.register(vendingRoutes, { prefix: '/api/servers/:id/vending' });
   await fastify.register(pluginsRoutes, { prefix: '/api/servers/:id/plugins' });
+  await fastify.register(dashboardRoutes, { prefix: '/api/dashboard' });
 }
