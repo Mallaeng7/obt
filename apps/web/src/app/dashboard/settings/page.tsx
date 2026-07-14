@@ -12,6 +12,7 @@ interface ServerInfo {
 
 export default function SettingsPage() {
   const [servers, setServers] = useState<ServerInfo[]>([]);
+  const [pendingPairings, setPendingPairings] = useState<any[]>([]);
   const [loadingServers, setLoadingServers] = useState(true);
   const [alertChannelId, setAlertChannelId] = useState("");
   const [savingChannel, setSavingChannel] = useState(false);
@@ -20,13 +21,38 @@ export default function SettingsPage() {
   useEffect(() => {
     async function loadServers() {
       try {
-        const res = await fetch("/api/servers");
+        const [res, pendingRes] = await Promise.all([
+          fetch("/api/servers"),
+          fetch("/api/servers/pending")
+        ]);
         if (res.ok) setServers(await res.json());
+        if (pendingRes.ok) setPendingPairings(await pendingRes.json());
       } catch { /* ignore */ }
       finally { setLoadingServers(false); }
     }
     loadServers();
+    const iv = setInterval(loadServers, 10000); // 10초마다 갱신
+    return () => clearInterval(iv);
   }, []);
+
+  async function handleConnectPending(pending: any) {
+    try {
+      const res = await fetch("/api/servers/pair", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(pending),
+      });
+      if (res.ok) {
+        const newServer = await res.json();
+        setServers((prev) => [...prev, newServer]);
+        setPendingPairings((prev) => prev.filter((p) => p.ip !== pending.ip || p.port !== pending.port));
+      } else {
+        alert("Failed to connect server.");
+      }
+    } catch {
+      alert("Error connecting server.");
+    }
+  }
 
   async function handleDisconnect(id: string) {
     try {
@@ -177,9 +203,35 @@ export default function SettingsPage() {
             </div>
           )}
 
-          <button className="w-full py-4 border-2 border-dashed border-white/20 rounded-xl text-muted-foreground hover:bg-white/5 hover:text-white transition-colors hover:border-white/40 font-medium">
-            + Click "Pair with Server" in-game
-          </button>
+          {/* Pending Pairings */}
+          <div className="pt-4 mt-4 border-t border-white/5">
+            <h3 className="text-lg font-semibold mb-3">Pending Pairing Requests</h3>
+            {loadingServers ? (
+              <p className="text-sm text-muted-foreground">Loading pending requests...</p>
+            ) : pendingPairings.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No pending pairing requests. Click "Pair with Server" in-game to see them here.</p>
+            ) : (
+              <div className="space-y-3">
+                {pendingPairings.map((p, idx) => (
+                  <div key={idx} className="flex items-center justify-between p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl">
+                    <div className="flex items-center gap-3">
+                      <Server className="w-5 h-5 text-yellow-400 shrink-0" />
+                      <div>
+                        <h4 className="font-bold">{p.serverName}</h4>
+                        <p className="text-xs text-muted-foreground">{p.ip}:{p.port}</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => handleConnectPending(p)}
+                      className="px-4 py-2 bg-green-500/20 hover:bg-green-500/30 text-green-400 rounded-lg transition-colors border border-green-500/50 font-medium"
+                    >
+                      Connect
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </section>
 
       </div>

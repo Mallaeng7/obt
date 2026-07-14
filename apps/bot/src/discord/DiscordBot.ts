@@ -27,6 +27,16 @@ export class DiscordBot {
     });
 
     this.client.on('interactionCreate', async (interaction) => {
+      if (interaction.isButton()) {
+        try {
+          const { notificationService } = await import('../services/NotificationService');
+          await notificationService.handleButtonInteraction(interaction as any);
+        } catch (error) {
+          console.error('[Discord] Button interaction error:', error);
+        }
+        return;
+      }
+
       if (!interaction.isChatInputCommand()) return;
 
       const command = this.commands.get(interaction.commandName);

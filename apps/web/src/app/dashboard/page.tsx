@@ -104,11 +104,11 @@ export default function DashboardOverview() {
       glow: "shadow-[0_0_15px_rgba(249,115,22,0.2)]",
     },
     {
-      title: "Active Devices",
-      value: loading ? "—" : String(activeDevices),
-      icon: Server,
-      color: "text-green-500",
-      glow: "shadow-[0_0_15px_rgba(34,197,94,0.2)]",
+      title: "Connection Status",
+      value: loading ? "—" : !firstServer ? "No Server" : firstServer.isConnected ? "Connected" : "Disconnected",
+      icon: firstServer?.isConnected ? Wifi : WifiOff,
+      color: firstServer?.isConnected ? "text-green-500" : "text-red-500",
+      glow: firstServer?.isConnected ? "shadow-[0_0_15px_rgba(34,197,94,0.2)]" : "shadow-[0_0_15px_rgba(239,68,68,0.2)]",
     },
     {
       title: "Team Online",
